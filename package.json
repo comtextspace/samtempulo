@@ -1,0 +1,22 @@
+{
+  "name": "Marxhub",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/comtextspace/marxhub.git",
+  "author": "Amikoj <estoneco@esperantujo.eo>",
+  "license": "MIT",
+  "devDependencies": {
+    "@iktakahiro/markdown-it-katex": "^4.0.1",
+    "@vuepress/bundler-vite": "^2.0.0-rc.8",
+    "@vuepress/theme-default": "^2.0.0-rc.18",
+    "markdown-it-attrs": "^4.1.6",
+    "markdown-it-footnote": "^4.0.0",
+    "markdown-it-multimd-table": "^4.2.3",
+    "vuepress": "^2.0.0-rc.8"
+  },
+  "scripts": {
+    "docs:dev": "node ./node_modules/vuepress/bin/vuepress dev docs",
+    "docs:build": "node ./node_modules/vuepress/bin/vuepress.js build docs"
+  },
+  "dependencies": {}
+}
