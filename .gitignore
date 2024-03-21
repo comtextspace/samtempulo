@@ -3,3 +3,4 @@ node_modules
 .cache
 docs/.vuepress/dist
 docs/images1
+db.sqlite3

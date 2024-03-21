@@ -14,9 +14,9 @@ export default defineUserConfig ({
     vuePluginOptions: {},
   }),
   lang: "ru-RU",
-  title: "Marxhub",
+  title: "MarxHub",
   base: "/marxhub/",
-  description: "Marxhub",
+  description: "MarxHub",
   head: [
 /*
     // <!-- revisionme -->
