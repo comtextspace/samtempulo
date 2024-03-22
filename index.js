@@ -1,6 +1,6 @@
 import { Command } from 'commander';
 
-import {importInDb} from './source/command.js';
+import { importInDb, exportFromDb } from './source/command.js';
 
 const INPUT_PATH = './data/';
 const OUTPUT_PATH = './docs/';
@@ -22,10 +22,9 @@ program.command('import')
 
 program.command('export')
   .description('Экспорт данных из БД sqlite в страницы сайта')
-  .option('-dest, --dest <string>', 'Каталог куда сохранять файлы', OUTPUT_PATH)
-  .option('-s, --source <string>', 'Каталог с исходными файлами', INPUT_PATH)
+  .option('-dest, --dest <string>', 'Каталог куда экспортировать файлы', OUTPUT_PATH)
   .action((options) => {
-    exportFromDb(options.source, options.dest);
+    exportCommand(options.dest, DB_FILENAME);
   });
 
 program.parse();
@@ -37,4 +36,13 @@ function importCommand(sourcePath, dbFilename) {
     
   console.log('finish import');
 }
+
+function exportCommand(destPath, dbFilename) {
+  console.log(`start export to path ${destPath}`);
+
+  exportFromDb(destPath, dbFilename);
+    
+  console.log('finish export');
+}
+
 
