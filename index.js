@@ -1,19 +1,15 @@
-import fs from 'fs';
-import path from 'path';
-
 import { Command } from 'commander';
-import { load } from 'js-toml';
 
-import {openDb, closeDb, createSchema} from './source/data.js';
-// import {importRelease} from './source/import.js';
+import {importInDb} from './source/command.js';
 
 const INPUT_PATH = './data/';
 const OUTPUT_PATH = './docs/';
+const DB_FILENAME = './db.sqlite3';
 
 const program = new Command();
 
 program
-  .name('Marxhub builder')
+  .name('MarxHub builder')
   .description('Программа для генерации содержимого сайта Marxhub')
   .version('0.1.0');
 
@@ -21,7 +17,7 @@ program.command('import')
   .description('Загрузка данных в БД sqlite')
   .option('-s, --source <string>', 'Каталог с исходными файлами', INPUT_PATH)
   .action((options) => {
-    importInDb(options.source);
+    importCommand(options.source, DB_FILENAME);
   });
 
 program.command('export')
@@ -34,21 +30,11 @@ program.command('export')
 
 program.parse();
 
-function importInDb(sourcePath) {
-  openDb();
-  createSchema();
+function importCommand(sourcePath, dbFilename) {
+  console.log(`start import from path ${sourcePath}`);
 
-  console.log(`start parsing from path ${sourcePath}`);
-
-  const inputFiles = fs.readdirSync(sourcePath);
-  console.log('Input files: ' + inputFiles.length);
-
-  for (const releaseFilename of inputFiles) {
-    const fileContent = fs.readFileSync(path.join(sourcePath, releaseFilename), 'utf8');
-    const release = load(fileContent);
-    console.log(release);
-  }
-
-  console.log('finish parsing');
-  closeDb();
+  importInDb(sourcePath, dbFilename);
+    
+  console.log('finish import');
 }
+

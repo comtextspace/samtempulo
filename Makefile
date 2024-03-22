@@ -18,3 +18,6 @@ lint:
 
 lintfix:
 	yarn lint:fix
+
+test:
+	yarn test

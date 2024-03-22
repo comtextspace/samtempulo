@@ -4,3 +4,4 @@ node_modules
 docs/.vuepress/dist
 docs/images1
 db.sqlite3
+db-test.sqlite3

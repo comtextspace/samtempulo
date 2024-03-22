@@ -1,0 +1,16 @@
+
+date = 2024-03-21
+
+[[note]]
+
+title="Статья N"
+type="article"
+date = 2024-03-19
+description="""
+Статья известного человека."""
+
+[[note]]
+
+title="Книга X"
+type="book"
+date = 2024-03-15
