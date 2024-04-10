@@ -1,28 +1,29 @@
-[[articles]]
+[[article]]
 
 id = "bee5d569-a546-44fb-9b54-63d9cf338dbd"
 name="О кораблях дураков"
 type="article"
 date = 2024-03-21
 description = """
-Выборы, на данный момент, не являются политическим событием, ходить на них не имеет смысла. Что делать вместо этого? Изучать теорию, писать публицистику, работать на коллективным научно-публицистическим изданием, вести индивидуальную пропаганду."""
+Выборы, на данный момент, не являются политическим событием, ходить на них не имеет смысла. Что делать вместо этого? Изучать теорию, писать публицистику, работать на коллективным научно-публицистическим изданием, вести индивидуальную пропаганду.
+"""
 
-[[articles.connections]]
+[[article.connections]]
 to = "da78eb86-f63f-4688-9378-5a88e70f6791"
 type = "author"
 
-[[articles.connections]]
+[[article.connections]]
 to = "857a3a74-59e1-40a2-ad90-56a21c7edc42"
 type = "author_group"
 
-[[articles.links]]
+[[article.link]]
 name = "LeninCrew.com/ship-of-fools"
 url = "https://lenincrew.com/ship-of-fools/"
 
-[[articles.connections]]
+[[article.connections]]
 to = "faa8829a-e709-472f-b70b-abf1564daeec"
 type = "mention"
 
-[[articles.connections]]
+[[article.connections]]
 to = "25c87f26-52d1-4467-b236-e0beb5e813a3"
 type = "mention"
