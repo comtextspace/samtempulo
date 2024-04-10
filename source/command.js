@@ -8,10 +8,12 @@ import {openDb,
   createSchema, 
   appendObject,
   loadData,
-  getNotes
+  getNotes,
+  getAuthors,
+  getGroups
 } from './data.js';
 
-import {makeIndex} from './export.js';
+import {makeIndex, makePages} from './export.js';
 
 const INDEX_FILENAME = 'index.md';
 
@@ -40,8 +42,23 @@ export function exportFromDb(destPath, dbFilename) {
 
   const notes = getNotes();
   const indexContent = makeIndex(notes);
-
   fs.writeFileSync(path.join(destPath, INDEX_FILENAME), indexContent, 'utf8');
+
+  const authors = getAuthors();
+  const authorPages = makePages(authors);
+
+  for (const page of authorPages) {
+    const fullFilename = path.join(destPath, page.filename);
+    fs.writeFileSync(fullFilename, page.content, 'utf8');  
+  }
+
+  const groups = getGroups();
+  const groupPages = makePages(groups);
+
+  for (const page of groupPages) {
+    const fullFilename = path.join(destPath, page.filename);
+    fs.writeFileSync(fullFilename, page.content, 'utf8');  
+  }
 
   closeDb();
 }

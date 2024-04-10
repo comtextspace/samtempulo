@@ -2,10 +2,10 @@ import _ from 'lodash';
 
 const INDEX_HEADER = '# MarxHub\n';
 
-export function makeIndex(objectsTable) {
+export function makeIndex(notes) {
   let res = INDEX_HEADER;
 
-  const objects = _.groupBy(objectsTable, 'date');
+  const objects = _.groupBy(notes, 'date');
 
   for (const object in objects) {
     res += `\n## ${object}\n`;
@@ -15,32 +15,40 @@ export function makeIndex(objectsTable) {
     for (const note of notes) {
       res += `\n### ${note.name} (${typeToText(note.type)})\n`;
       
-      res += getTextFromList('Авторы', note.authors);
-      res += getTextFromList('Группы', note.author_groups);
+      res += getTextFromList('Авторы:', note.authors);
+      res += getTextFromList('Группы:', note.author_groups);
 
-      if (note.links) {
-        const links = JSON.parse(note.links);
+      res += makeLinksText(note.links);
 
-        const linkArray = [];
-
-        for (const link of links) {
-          linkArray.push(`[${link.name}](${link.url})`);
-        }
-  
-
-        res += '\nСсылки: ' + linkArray.join(', ') + '.\n';
-    }
         res += '\n' + note.description;
 
-        res += getTextFromList('В статье упоминаются', note.mentions);
-
-      
+        res += getTextFromList('В статье упоминаются:', note.mentions);
     }
 
   }
   _.groupBy(['one', 'two', 'three'], 'length');
   // => { '3': ['one', 'two'], '5': ['three'] }
   return res;
+}
+
+export function makePages(objects) {
+    const pages = [];
+    let page = '';
+  
+    for (const object of objects) {
+      page = `# ${object.name}\n`;
+
+      page += makeLinksText(object.links);
+
+      page += getTextFromList('Состоит в', object.member);
+
+      pages.push({
+        filename: object.id + '.md',
+        content: page
+      });
+    }
+
+    return pages;
 }
 
 const typeDict = {
@@ -57,7 +65,17 @@ function getTextFromList(caption, list) {
     return '';
   }
 
-  return `\n${caption}: ` 
+  return `\n${caption} ` 
       + list.map(obj => `${obj.name}`).join(', ') 
       + '.\n';
+}
+
+function makeLinksText(linksRaw) {
+    if (!linksRaw) {
+        return '';
+    }
+
+    const links = JSON.parse(linksRaw);
+    const linkList = links.map(link => `[${link.name}](${link.url})`);
+    return '\nСсылки: ' + linkList.join(', ') + '.\n';
 }
