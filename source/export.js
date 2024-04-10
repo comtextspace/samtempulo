@@ -66,7 +66,7 @@ function getTextFromList(caption, list) {
   }
 
   return `\n${caption} ` 
-      + list.map(obj => `${obj.name}`).join(', ') 
+      + list.map(obj => `[${obj.name}](${obj.id}.md)`).join(', ') 
       + '.\n';
 }
 
