@@ -4,7 +4,7 @@ install:
 dev-site:
 	yarn docs:dev
 
-buil-site:
+built-site:
 	yarn docs:build
 
 import:

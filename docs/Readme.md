@@ -1,3 +1,0 @@
-# MarxHub
-
-Text
