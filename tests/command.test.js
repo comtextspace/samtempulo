@@ -27,4 +27,4 @@ test('Build site', () => {
     expect(actualFileContent, `File ${filename}`).toBe(correctFileContent);
   }
 
- });
+});

@@ -1,0 +1,48 @@
+[[article]]
+
+id = "abea5e6c-38f2-43d7-9d98-3d25c82b5baa"
+name ="Про новое общество"
+date = 2024-03-21
+description = """
+Хорошая статья про новое общество.
+"""
+
+[[article.link]]
+
+name = "Статья «Хорошее общество»"
+url = "https://example.com/nova"
+
+[[article.connections]]
+to = "da78eb86-f63f-4688-9378-5a88e70f6791"
+type = "author"
+
+[[article.connections]]
+to = "857a3a74-59e1-40a2-ad90-56a21c7edc42"
+type = "author_group"
+
+[[article.connections]]
+to = "faa8829a-e709-472f-b70b-abf1564daeec"
+type = "mention"
+
+
+[[book]]
+
+id = "f66123da-4dcb-4528-bfd7-46232da9e232"
+name="Про всё хорошее"
+date = 2024-03-20
+description = """
+Очень хорошая книга.
+"""
+
+[[book.connections]]
+to = "25c87f26-52d1-4467-b236-e0beb5e813a3"
+type = "author"
+
+[[book.connections]]
+to = "6c097a63-4450-4f8f-a419-07373e99281c"
+type = "author_group"
+
+[[book.link]]
+
+name = "hello.ru"
+url = "https://hello.ru/12"

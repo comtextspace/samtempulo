@@ -1,0 +1,15 @@
+[[group]]
+id = "857a3a74-59e1-40a2-ad90-56a21c7edc42"
+name = "Новые люди"
+description="""
+"""
+
+[[group.link]]
+name = "novahomo.com"
+url = "https://novahomo.com"
+
+[[group]]
+id = "6c097a63-4450-4f8f-a419-07373e99281c"
+name = "Союз добрый людей"
+description="""
+"""

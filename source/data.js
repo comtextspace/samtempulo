@@ -27,54 +27,174 @@ export function createSchema() {
   db.exec(sql);
 }
 
-export function appendRelease(release) {
-  const releaseStmt = db.prepare(SQL_INSERT_RELEASE);
+class Object {
+  constructor(id, type, name, date, description, links) {
+    this.id = id;
+    this.type = type;
+    this.name = name;
+    this.date = date;
+    this.description = description;
+    this.links = links;
 
-  const infoRelease = releaseStmt.run({
-    date: moment(release.date).format('YYYY-MM-DD')
-  });
-
-  const releaseId = infoRelease.lastInsertRowid;
-
-  const noteStmt = db.prepare(SQL_INSERT_NOTE);
-
-  for (const note of release.note) {
-    noteStmt.run({
-      releaseId: releaseId,
-      title: note.title,
-      type: note.type,
-      date: moment(note.date).format('YYYY-MM-DD'),
-      description: note.description
-    });
+    this.author_groups = [];
+    this.authors = [];
+    this.mentions = [];
+    this.member = [];
   }
 }
 
-export function getReleases() {
-  const stmt = db.prepare(SQL_SELECT_RELEASE);
-  return stmt.all();
+const objectList = [];
+const objectMap = new Map();
+
+export function loadData() {
+  const stmtObjects = db.prepare(SQL_SELECT_OBJECTS);
+
+  for (const dbObj of stmtObjects.all()) {
+    const obj = new Object(
+      dbObj.id, 
+      dbObj.type, 
+      dbObj.name,
+      dbObj.date,
+      dbObj.description,
+      dbObj.links,
+    );
+
+    objectList.push(obj);
+    objectMap.set(obj.id, obj);
+  }
+
+  const stmtConnections = db.prepare(SQL_SELECT_CONNECTIONS);
+  /*
+('author_group', 'object1 является работой группы object2'),
+('author', 'работа object1 является работой object2'),
+('mention', 'в работе object1 упоминается object2'),
+('member', 'object1 член группы object2');
+*/
+  for (const connection of stmtConnections.all()) {
+    const obj1 = objectMap.get(connection.object1);
+    const obj2 = objectMap.get(connection.object2);
+
+    if (!obj1) {
+      throw 'Не найден объект ' + connection.object1;
+    }
+
+    if (!obj2) {
+      throw 'Не найден объект ' + connection.object2;
+    }
+
+    if (connection.connection_type == 'author_group') {
+      obj1.author_groups.push(obj2);
+    } else if (connection.connection_type == 'author') {
+      obj1.authors.push(obj2);
+    } else if (connection.connection_type == 'mention') {
+      obj1.mentions.push(obj2);
+    } else if (connection.connection_type == 'member') {
+      obj1.member.push(obj2);
+    }
+  }
 }
 
-const SQL_INSERT_RELEASE = `
-insert into release (date) values (:date);
+export function getObjects() {
+  return objectList;
+}
+
+export function getAuthors() {
+  return objectList.filter(
+    obj => ['author'].includes(obj.type)
+  );
+}
+
+export function getGroups() {
+  return objectList.filter(
+    obj => ['group'].includes(obj.type)
+  );
+}
+
+export function getNotes() {
+  return objectList.filter(
+    obj => ['book', 'article'].includes(obj.type)
+  );
+}
+
+export function appendObject(object) {
+  const objectStmt = db.prepare(SQL_INSERT_OBJECT);
+
+  objectStmt.run({
+    id: object.id,
+    type: object.type,
+    name: object.name,
+    date: object.date ? moment(object.date).format('YYYY-MM-DD') : null,
+    links: object.link ? JSON.stringify(object.link) : null,
+    description: object.description ? object.description : null,
+    fields: object.fields ? object.fields : null
+  });
+
+  const connectionStmt = db.prepare(SQL_INSERT_CONNECTION);
+
+  object?.connections?.forEach(connection => {
+    connectionStmt.run({
+      object1: object.id,
+      connection_type: connection.type,
+      object2: connection.to
+    });
+  });
+}
+
+const SQL_INSERT_OBJECT = `
+insert into object (
+  id,            -- 1
+  type,          -- 2
+  name,          -- 3
+  date,          -- 4
+  links,         -- 5
+  description,   -- 6
+  fields         -- 7
+  ) 
+  values (
+    :id,            -- 1
+    :type,          -- 2
+    :name,          -- 3
+    :date,          -- 4
+    :links,         -- 5
+    :description,   -- 6
+    :fields         -- 7
+  );
 `;
 
-const SQL_INSERT_NOTE = `
-insert into note (release_id, title, type, date, description) 
-values (:releaseId, :title, :type, :date, :description);
+const SQL_INSERT_CONNECTION = `
+insert into connection (
+  object1,           -- 1
+  connection_type,   -- 2
+  object2            -- 3
+  ) 
+  values (
+    :object1,           -- 1
+    :connection_type,   -- 2
+    :object2            -- 3
+  );
 `;
 
-const SQL_SELECT_RELEASE = `
+const SQL_SELECT_OBJECTS = `
 select
-  strftime('%Y-%m-%d', r.date) as releaseDate,
-  n.title,
-  n.type,
-  n.date,
-  n.description
-from 
-  "release" r join note n on
-    r.id = n.release_id
+  o.id,
+  o.type,
+  o.name,
+  o.date,
+  o.links,
+  o.description
+from
+  object o
+-- where
+--  o.type in ('book', 'article')
 order by
-  r.date,
-  n.date,
-  n.title
+  o.date desc 
+`;
+
+const SQL_SELECT_CONNECTIONS = `
+SELECT
+  object1, 
+  connection_type, 
+  object2
+FROM 
+  "connection";
 `;
