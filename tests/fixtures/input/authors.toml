@@ -14,6 +14,10 @@ name = "Пётр Васильевич"
 description="""
 """
 
+[[author.connections]]
+to = "6c097a63-4450-4f8f-a419-07373e99281c"
+type = "member"
+
 [[author]]
 id = "da78eb86-f63f-4688-9378-5a88e70f6791"
 name = "Рамиль Рамильевич"

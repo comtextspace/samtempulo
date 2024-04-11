@@ -42,6 +42,13 @@ export function makePages(objects) {
 
       page += getTextFromList('Состоит в', object.getConnections('to', 'member'));
 
+      page += getTextFromList('Автор:', object.getConnections('from', 'author'));
+
+      page += getTextFromList('Упоминается в', object.getConnections('from', 'mention'));
+      
+      page += getTextFromList('Участники:', object.getConnections('from', 'member'));
+
+
       pages.push({
         filename: object.id + '.md',
         content: page
