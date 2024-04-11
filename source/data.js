@@ -36,10 +36,20 @@ class Object {
     this.description = description;
     this.links = links;
 
-    this.author_groups = [];
-    this.authors = [];
-    this.mentions = [];
-    this.member = [];
+    this.connection_to = [];
+    this.connection_from = [];
+  }
+
+  getConnections(direction, type) {
+    if (direction == 'to') {
+      return [ ...this.connection_to
+        .filter(con => con.type == type)
+        .map(con => con.to)];
+    }
+
+    return [...this.connection_from
+      .filter(con => con.type == type)
+      .map(con => con.from)];
   }
 }
 
@@ -82,15 +92,15 @@ export function loadData() {
       throw 'Не найден объект ' + connection.object2;
     }
 
-    if (connection.connection_type == 'author_group') {
-      obj1.author_groups.push(obj2);
-    } else if (connection.connection_type == 'author') {
-      obj1.authors.push(obj2);
-    } else if (connection.connection_type == 'mention') {
-      obj1.mentions.push(obj2);
-    } else if (connection.connection_type == 'member') {
-      obj1.member.push(obj2);
-    }
+    obj1.connection_to.push({
+      type: connection.connection_type,
+      to: obj2 
+    });
+
+    obj2.connection_from.push({
+      type: connection.connection_type,
+      from: obj1 
+    });
   }
 }
 

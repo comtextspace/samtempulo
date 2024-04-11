@@ -15,14 +15,14 @@ export function makeIndex(notes) {
     for (const note of notes) {
       res += `\n### ${note.name} (${typeToText(note.type)})\n`;
       
-      res += getTextFromList('Авторы:', note.authors);
-      res += getTextFromList('Группы:', note.author_groups);
+      res += getTextFromList('Авторы:', note.getConnections('to', 'author'));
+      res += getTextFromList('Группы:', note.getConnections('to', 'author_group'));
 
       res += makeLinksText(note.links);
 
         res += '\n' + note.description;
 
-        res += getTextFromList('В статье упоминаются:', note.mentions);
+        res += getTextFromList('В статье упоминаются:', note.getConnections('to', 'mention'));
     }
 
   }
@@ -40,7 +40,7 @@ export function makePages(objects) {
 
       page += makeLinksText(object.links);
 
-      page += getTextFromList('Состоит в', object.member);
+      page += getTextFromList('Состоит в', object.getConnections('to', 'member'));
 
       pages.push({
         filename: object.id + '.md',
