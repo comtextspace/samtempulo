@@ -19,3 +19,13 @@ id = "da78eb86-f63f-4688-9378-5a88e70f6791"
 name = "Семён Семецкий"
 description="""
 """
+
+[[author]]
+id = "a47e8f96-ced4-4fed-b7f1-2a0221eac772"
+name = "Олег Комолов"
+description="""
+"""
+
+[[author.connections]]
+to = "f1c87a85-1de8-4c68-b543-8a46dd1ae04a"
+type = "member"
