@@ -4,7 +4,7 @@ name = "Андрей Рудой"
 description="""
 """
 
-[[author.connections]]
+[[author.connection]]
 to = "6c097a63-4450-4f8f-a419-07373e99281c"
 type = "member"
 
@@ -26,6 +26,6 @@ name = "Олег Комолов"
 description="""
 """
 
-[[author.connections]]
+[[author.connection]]
 to = "f1c87a85-1de8-4c68-b543-8a46dd1ae04a"
 type = "member"

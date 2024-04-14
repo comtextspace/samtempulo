@@ -8,11 +8,11 @@ description = """
 Выборы, на данный момент, не являются политическим событием, ходить на них не имеет смысла. Вместо этого изучайте теорию, работайте над коллективным научно-публицистическим изданием, ведите индивидуальную пропаганду.
 """
 
-[[article.connections]]
+[[article.connection]]
 to = "da78eb86-f63f-4688-9378-5a88e70f6791"
 type = "author"
 
-[[article.connections]]
+[[article.connection]]
 to = "857a3a74-59e1-40a2-ad90-56a21c7edc42"
 type = "author_group"
 
@@ -20,26 +20,26 @@ type = "author_group"
 name = "LeninCrew.com/ship-of-fools"
 url = "https://lenincrew.com/ship-of-fools/"
 
-[[article.connections]]
+[[article.connection]]
 to = "faa8829a-e709-472f-b70b-abf1564daeec"
 type = "mention"
 
-[[article.connections]]
+[[article.connection]]
 to = "25c87f26-52d1-4467-b236-e0beb5e813a3"
 type = "mention"
 
-[[article.connections]]
+[[article.connection]]
 to = "da645c3e-65dd-4f6a-aef3-eb312b8da0ce"
 type = "mention"
 
-[[article.connections]]
+[[article.connection]]
 to = "b041c1ce-29a0-43c4-a65e-1174e0fec0df"
 type = "mention"
 
-[[article.connections]]
+[[article.connection]]
 to = "f1c87a85-1de8-4c68-b543-8a46dd1ae04a"
 type = "mention"
 
-[[article.connections]]
+[[article.connection]]
 to = "a47e8f96-ced4-4fed-b7f1-2a0221eac772"
 type = "mention"
