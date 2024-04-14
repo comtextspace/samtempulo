@@ -14,9 +14,9 @@ export default defineUserConfig ({
     vuePluginOptions: {},
   }),
   lang: "ru-RU",
-  title: "MarxHub",
-  base: "/marxhub/",
-  description: "MarxHub",
+  title: "Samtempulo",
+  base: "/",
+  description: "Samtempulo",
   head: [
 /*
     // <!-- revisionme -->
@@ -50,7 +50,9 @@ export default defineUserConfig ({
     sidebar: false,
     contributors: false,
     lastUpdatedText: "Последниее изменение",
-    navbar: [{ text: "Главная", link: "/" }],
+    navbar: [{ text: "Главная", link: "/" },
+             { text: "О сайте", link: "/static/about.md" }
+    ],
   }),
 
   extendsMarkdown: (md) => {
