@@ -4,4 +4,4 @@ node_modules
 docs/.vuepress/dist
 docs/images1
 *.sqlite3*
-tests/output
+tests/output/*.md
