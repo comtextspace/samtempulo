@@ -12,15 +12,15 @@ description = """
 name = "Статья «Хорошее общество»"
 url = "https://example.com/nova"
 
-[[article.connections]]
+[[article.connection]]
 to = "da78eb86-f63f-4688-9378-5a88e70f6791"
 type = "author"
 
-[[article.connections]]
+[[article.connection]]
 to = "857a3a74-59e1-40a2-ad90-56a21c7edc42"
 type = "author_group"
 
-[[article.connections]]
+[[article.connection]]
 to = "faa8829a-e709-472f-b70b-abf1564daeec"
 type = "mention"
 
@@ -34,11 +34,11 @@ description = """
 Очень хорошая книга.
 """
 
-[[book.connections]]
+[[book.connection]]
 to = "25c87f26-52d1-4467-b236-e0beb5e813a3"
 type = "author"
 
-[[book.connections]]
+[[book.connection]]
 to = "6c097a63-4450-4f8f-a419-07373e99281c"
 type = "author_group"
 

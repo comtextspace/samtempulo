@@ -141,7 +141,7 @@ export function appendObject(object) {
 
   const connectionStmt = db.prepare(SQL_INSERT_CONNECTION);
 
-  object?.connections?.forEach(connection => {
+  object?.connection?.forEach(connection => {
     connectionStmt.run({
       object1: object.id,
       connection_type: connection.type,
