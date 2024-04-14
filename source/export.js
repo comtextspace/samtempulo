@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-const INDEX_HEADER = '# MarxHub\n';
+const INDEX_HEADER = '# Samtempulo\n';
 
 export function makeIndex(notes) {
   let res = INDEX_HEADER;
