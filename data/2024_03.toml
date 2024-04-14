@@ -43,3 +43,7 @@ type = "mention"
 [[article.connection]]
 to = "a47e8f96-ced4-4fed-b7f1-2a0221eac772"
 type = "mention"
+
+[[article.connection]]
+to = "6c097a63-4450-4f8f-a419-07373e99281c"
+type = "mention"
