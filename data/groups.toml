@@ -4,7 +4,7 @@ name = "LeninCrew"
 description="""
 """
 
-[[group.links]]
+[[group.link]]
 name = "LeninCrew.com"
 url = "https://lenincrew.com"
 
@@ -29,5 +29,33 @@ description="""
 [[group]]
 id = "f1c87a85-1de8-4c68-b543-8a46dd1ae04a"
 name = "Простые Числа"
+description="""
+"""
+
+[[group]]
+id = "754e8949-7ca7-4c6f-9dd3-6f8d8d3b055c"
+name = "Рабочая партия России (РПР)"
+description="""
+"""
+
+[[group]]
+id = "e038e646-505a-4f83-a8fd-ca96aa0fcd83"
+name = "Народная правда (НП)"
+description="""Газета.
+"""
+
+[[group]]
+id = "d4e88a55-7eab-4f24-ae49-244e45c05ead"
+name = "Политштурм"
+description="""
+"""
+
+[[group.link]]
+name = "politsturm.com"
+url = "https://politsturm.com"
+
+[[group]]
+id = "cf48c845-00a2-4ef8-ba7f-73234e8ec1fd"
+name = "Вестник Бури"
 description="""
 """

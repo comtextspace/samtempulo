@@ -8,6 +8,10 @@ description="""
 to = "6c097a63-4450-4f8f-a419-07373e99281c"
 type = "member"
 
+[[author.connection]]
+to = "cf48c845-00a2-4ef8-ba7f-73234e8ec1fd"
+type = "member"
+
 [[author]]
 id = "25c87f26-52d1-4467-b236-e0beb5e813a3"
 name = "Василий Садонин"
@@ -29,3 +33,25 @@ description="""
 [[author.connection]]
 to = "f1c87a85-1de8-4c68-b543-8a46dd1ae04a"
 type = "member"
+
+[[author]]
+id = "c20fa3f5-7a66-4c25-82cd-87c7272db8bd"
+name = "Федин Андрей Анатольевич"
+description="""
+"""
+
+[[author.connection]]
+to = "754e8949-7ca7-4c6f-9dd3-6f8d8d3b055c"
+type = "member"
+
+[[author]]
+id = "72a1cc5c-ad8e-4400-a322-10303c09d730"
+name = "Евгений Ступин"
+description="""
+"""
+
+[[author]]
+id = "aa591a76-1930-4f5e-a27f-0eb89661b486"
+name = "Михаил Лобанов"
+description="""
+"""
