@@ -2,7 +2,7 @@ import _ from 'lodash';
 
 const INDEX_HEADER = '# Samtempulo\n';
 
-export function makeIndex(notes) {
+export function makeMainPage(notes) {
   let res = INDEX_HEADER;
 
   const objects = _.groupBy(notes, 'date');
@@ -26,8 +26,18 @@ export function makeIndex(notes) {
     }
 
   }
-  _.groupBy(['one', 'two', 'three'], 'length');
-  // => { '3': ['one', 'two'], '5': ['three'] }
+  return res;
+}
+
+export function makeIndex(pageName, objects) {
+  let res = `# ${pageName}\n\n`;
+
+  const sortedObjects = _.sortBy(objects, ['name'], ['asc']);
+
+  for (const object of sortedObjects) {
+    res += `* [${object.name}](${object.id}.md)\n`;
+  }
+  
   return res;
 }
 

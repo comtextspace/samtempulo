@@ -49,7 +49,9 @@ export default defineUserConfig ({
     contributors: false,
     lastUpdatedText: "Последниее изменение",
     navbar: [{ text: "Главная", link: "/" },
-             { text: "О сайте", link: "/static/about.md" }
+             { text: "Люди", link: "/homo.md" },
+             { text: "Группы", link: "/grupo.md" },
+             { text: "О сайте", link: "/static/about.md" },
     ],
   }),
 

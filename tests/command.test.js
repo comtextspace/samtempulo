@@ -9,6 +9,13 @@ const OUTPUT_PATH = './tests/output/';
 const DB_FILENAME = './db-test.sqlite3';
 
 test('Build site', () => {
+  for (const filename of fs.readdirSync(OUTPUT_PATH)) {
+    if (filename == 'dummy.txt') {
+      continue;
+    }
+     fs.unlinkSync(path.join(OUTPUT_PATH, filename));
+  }
+
   importInDb(INPUT_PATH, DB_FILENAME);
   exportFromDb(OUTPUT_PATH, DB_FILENAME);
 

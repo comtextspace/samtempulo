@@ -9,13 +9,14 @@ import {openDb,
   appendObject,
   loadData,
   getNotes,
-  getAuthors,
-  getGroups
+  getObjects
 } from './data.js';
 
-import {makeIndex, makePages} from './export.js';
+import {makeIndex, makeMainPage, makePages} from './export.js';
 
 const INDEX_FILENAME = 'index.md';
+const INDEX_PEOPLE_FILENAME = 'homo.md';
+const INDEX_GROUP_FILENAME = 'grupo.md';
 
 export function importInDb(sourcePath, dbFilename) {
   openDb(dbFilename);
@@ -41,10 +42,10 @@ export function exportFromDb(destPath, dbFilename) {
   loadData();
 
   const notes = getNotes();
-  const indexContent = makeIndex(notes);
+  const indexContent = makeMainPage(notes);
   fs.writeFileSync(path.join(destPath, INDEX_FILENAME), indexContent, 'utf8');
 
-  const authors = getAuthors();
+  const authors = getObjects(['author']);
   const authorPages = makePages(authors);
 
   for (const page of authorPages) {
@@ -52,13 +53,21 @@ export function exportFromDb(destPath, dbFilename) {
     fs.writeFileSync(fullFilename, page.content, 'utf8');  
   }
 
-  const groups = getGroups();
+  const groups = getObjects(['group']);
   const groupPages = makePages(groups);
 
   for (const page of groupPages) {
     const fullFilename = path.join(destPath, page.filename);
     fs.writeFileSync(fullFilename, page.content, 'utf8');  
   }
+
+  const indexAuthor = makeIndex('Люди', authors);
+  const indexAuthorFilename = path.join(destPath, INDEX_PEOPLE_FILENAME);
+  fs.writeFileSync(indexAuthorFilename, indexAuthor, 'utf8');
+
+  const indexGroup = makeIndex('Группы', groups);
+  const indexGroupFilename = path.join(destPath, INDEX_GROUP_FILENAME);
+  fs.writeFileSync(indexGroupFilename, indexGroup, 'utf8');
 
   closeDb();
 }

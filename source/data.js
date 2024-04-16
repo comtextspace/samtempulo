@@ -104,25 +104,19 @@ export function loadData() {
   }
 }
 
-export function getObjects() {
-  return objectList;
-}
-
-export function getAuthors() {
-  return objectList.filter(
-    obj => ['author'].includes(obj.type)
-  );
-}
-
-export function getGroups() {
-  return objectList.filter(
-    obj => ['group'].includes(obj.type)
-  );
-}
-
 export function getNotes() {
   return objectList.filter(
     obj => ['book', 'article'].includes(obj.type)
+  );
+}
+
+export function getObjects(types = []) {
+  if (types.length == 0) {
+    return objectList;
+  }
+
+  return objectList.filter(
+    obj => types.includes(obj.type)
   );
 }
 
