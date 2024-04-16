@@ -18,14 +18,13 @@ export default defineUserConfig ({
   base: "/",
   description: "Samtempulo",
   head: [
-/*
     // <!-- revisionme -->
     [
       "script",
       {},
       `
 	    var __rm__config = {
-        projectId: '',
+        projectId: '-Nva0pMtD0w_l3EZqBrf',
         locale: 'ru',
         contextWidget: 0,
         embedBtn: 0,
@@ -44,7 +43,6 @@ export default defineUserConfig ({
       },
     ],
     // <!-- /revisionme -->
-    */
   ],
   theme: defaultTheme({
     sidebar: false,
