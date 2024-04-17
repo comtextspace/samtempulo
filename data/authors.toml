@@ -55,3 +55,34 @@ id = "aa591a76-1930-4f5e-a27f-0eb89661b486"
 name = "Михаил Лобанов"
 description="""
 """
+
+[[author]]
+id = "b032d752-8c60-4bd3-96e7-229d77977d7b"
+name = "Бронислав"
+description="""
+"""
+
+[[author]]
+id = "b2fad3fa-a4ea-448f-8871-a7ff51f7f5cc"
+name = "Георгий Валентинович Плеханов"
+description="""
+"""
+
+[[author]]
+id = "fe00be5d-dae1-436d-9a0f-c6ad2db1501c"
+name = "Владимир Ильич Ленин"
+description="""
+"""
+
+[[author]]
+id = "a44cfa05-1f17-430c-9ef8-49eb227dac40"
+name = "Иосиф Виссарионович Сталин"
+description="""
+"""
+
+[[author]]
+id = "69d66c8b-5133-4374-bbf6-bc66b146ff2b"
+name = "Лев Давидович Троцкий"
+description="""
+"""
+

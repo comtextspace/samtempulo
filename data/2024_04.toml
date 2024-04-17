@@ -56,3 +56,44 @@ type = "mention"
 [[article.connection]]
 to = "cf48c845-00a2-4ef8-ba7f-73234e8ec1fd"
 type = "mention"
+
+[[article]]
+id = "57e504aa-912f-4edb-91a5-d2e4e6f79d1c"
+name="Сталинский опыт защиты ленинизма"
+type="article"
+date = 2024-04-17
+description = """
+И. Сталин продолжал теоретическую и практическую линию В. Ленина. И. Сталин одновременно с В. Лениным выступил против экономизма и за привнесение в массы классового сознания с помощью газеты. Экономическая борьба является только конкуренцией внутри системы а не классовой борьбой.
+"""
+
+[[article.connection]]
+to = "b032d752-8c60-4bd3-96e7-229d77977d7b"
+type = "author"
+
+[[article.connection]]
+to = "ea0b7872-f130-4959-80e5-07bda2de459c"
+type = "author_group"
+
+[[article.link]]
+name = "Публикация на сайте журнала Прорывист"
+url = "https://prorivists.org/92_stalin-leninism/"
+
+[[article.connection]]
+to = "b2fad3fa-a4ea-448f-8871-a7ff51f7f5cc"
+type = "mention"
+
+[[article.connection]]
+to = "fe00be5d-dae1-436d-9a0f-c6ad2db1501c"
+type = "mention"
+
+[[article.connection]]
+to = "a44cfa05-1f17-430c-9ef8-49eb227dac40"
+type = "mention"
+
+[[article.connection]]
+to = "69d66c8b-5133-4374-bbf6-bc66b146ff2b"
+type = "mention"
+
+[[article.connection]]
+to = "66f89d56-9bdd-42b5-85ca-c38ed71d0e2b"
+type = "mention"

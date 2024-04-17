@@ -20,8 +20,10 @@ export function makeMainPage(notes) {
       res += getTextFromList('Авторы:', note.getConnections('to', 'author'));
       
       res += getTextFromList('Группы:', note.getConnections('to', 'author_group'));
-
+      
+      if (note.description) {
       res += '\n' + note.description;
+      }
 
       res += getTextFromList('В статье упоминаются:', note.getConnections('to', 'mention'));
     }

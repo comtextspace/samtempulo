@@ -1,0 +1,12 @@
+[[book]]
+
+id = "66f89d56-9bdd-42b5-85ca-c38ed71d0e2b"
+name="Что делать? Наболевшие вопросы нашего движения"
+type="book"
+date = 1902-01-01
+description = """
+"""
+
+[[book.connection]]
+to = "fe00be5d-dae1-436d-9a0f-c6ad2db1501c"
+type = "author"

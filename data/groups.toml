@@ -59,3 +59,9 @@ id = "cf48c845-00a2-4ef8-ba7f-73234e8ec1fd"
 name = "Вестник Бури"
 description="""
 """
+
+[[group]]
+id = "ea0b7872-f130-4959-80e5-07bda2de459c"
+name = "Прорывист"
+description="""
+"""
