@@ -42,7 +42,7 @@ class Object {
 
   getConnections(direction, type) {
     if (direction == 'to') {
-      return [ ...this.connection_to
+      return [...this.connection_to
         .filter(con => con.type == type)
         .map(con => con.to)];
     }
@@ -102,12 +102,6 @@ export function loadData() {
       from: obj1 
     });
   }
-}
-
-export function getNotes() {
-  return objectList.filter(
-    obj => ['book', 'article'].includes(obj.type)
-  );
 }
 
 export function getObjects(types = []) {

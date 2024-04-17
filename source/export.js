@@ -15,14 +15,15 @@ export function makeMainPage(notes) {
     for (const note of notes) {
       res += `\n### ${note.name} (${typeToText(note.type)})\n`;
       
-      res += getTextFromList('Авторы:', note.getConnections('to', 'author'));
-      res += getTextFromList('Группы:', note.getConnections('to', 'author_group'));
-
       res += makeLinksText(note.links);
 
-        res += '\n' + note.description;
+      res += getTextFromList('Авторы:', note.getConnections('to', 'author'));
+      
+      res += getTextFromList('Группы:', note.getConnections('to', 'author_group'));
 
-        res += getTextFromList('В статье упоминаются:', note.getConnections('to', 'mention'));
+      res += '\n' + note.description;
+
+      res += getTextFromList('В статье упоминаются:', note.getConnections('to', 'mention'));
     }
 
   }
@@ -42,30 +43,45 @@ export function makeIndex(pageName, objects) {
 }
 
 export function makePages(objects) {
-    const pages = [];
-    let page = '';
+  const pages = [];
+  let page = '';
   
-    for (const object of objects) {
-      page = `# ${object.name}\n`;
+  for (const object of objects) {
+    page = `# ${object.name}\n`;
 
-      page += makeLinksText(object.links);
+    if (['article', 'book'].includes(object.type)) {
+      page += '\n' + object.date + '\n';
 
-      page += getTextFromList('Состоит в', object.getConnections('to', 'member'));
-
-      page += getTextFromList('Автор:', object.getConnections('from', 'author'));
-
-      page += getTextFromList('Упоминается в', object.getConnections('from', 'mention'));
-      
-      page += getTextFromList('Участники:', object.getConnections('from', 'member'));
-
-
-      pages.push({
-        filename: object.id + '.md',
-        content: page
-      });
+      page += '\nТип: ' + typeToText(object.type) + '\n';
     }
 
-    return pages;
+    page += makeLinksText(object.links);
+
+    page += getTextFromList('Авторы:', object.getConnections('to', 'author'));
+
+    page += getTextFromList('Группы:', object.getConnections('to', 'author_group'));
+
+    page += getTextFromList('Состоит в', object.getConnections('to', 'member'));
+
+    page += getTextFromList('Автор материалов:', object.getConnections('from', 'author'));
+
+    page += getTextFromList('Упоминается в', object.getConnections('from', 'mention'));
+      
+    page += getTextFromList('Участники:', object.getConnections('from', 'member'));
+
+    if (object.description) {
+      page += '\n' + object.description;
+    }
+
+    page += getTextFromList('В материале упоминаются:', object.getConnections('to', 'mention'));
+
+    pages.push({
+      filename: object.id + '.md',
+      content: page
+    });
+  }
+
+  return pages;
 }
 
 const typeDict = {
@@ -88,11 +104,11 @@ function getTextFromList(caption, list) {
 }
 
 function makeLinksText(linksRaw) {
-    if (!linksRaw) {
-        return '';
-    }
+  if (!linksRaw) {
+    return '';
+  }
 
-    const links = JSON.parse(linksRaw);
-    const linkList = links.map(link => `[${link.name}](${link.url})`);
-    return '\nСсылки: ' + linkList.join(', ') + '.\n';
+  const links = JSON.parse(linksRaw);
+  const linkList = links.map(link => `[${link.name}](${link.url})`);
+  return '\nСсылки: ' + linkList.join(', ') + '.\n';
 }

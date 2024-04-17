@@ -13,7 +13,7 @@ test('Build site', () => {
     if (filename == 'dummy.txt') {
       continue;
     }
-     fs.unlinkSync(path.join(OUTPUT_PATH, filename));
+    fs.unlinkSync(path.join(OUTPUT_PATH, filename));
   }
 
   importInDb(INPUT_PATH, DB_FILENAME);

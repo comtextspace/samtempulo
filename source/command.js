@@ -8,7 +8,6 @@ import {openDb,
   createSchema, 
   appendObject,
   loadData,
-  getNotes,
   getObjects
 } from './data.js';
 
@@ -41,31 +40,23 @@ export function exportFromDb(destPath, dbFilename) {
   openDb(dbFilename);
   loadData();
 
-  const notes = getNotes();
+  const notes = getObjects(['book', 'article']);
   const indexContent = makeMainPage(notes);
   fs.writeFileSync(path.join(destPath, INDEX_FILENAME), indexContent, 'utf8');
 
-  const authors = getObjects(['author']);
-  const authorPages = makePages(authors);
+  const objectsForPages = getObjects(['author', 'group', 'book', 'article']);
+  const pages = makePages(objectsForPages);
 
-  for (const page of authorPages) {
+  for (const page of pages) {
     const fullFilename = path.join(destPath, page.filename);
     fs.writeFileSync(fullFilename, page.content, 'utf8');  
   }
 
-  const groups = getObjects(['group']);
-  const groupPages = makePages(groups);
-
-  for (const page of groupPages) {
-    const fullFilename = path.join(destPath, page.filename);
-    fs.writeFileSync(fullFilename, page.content, 'utf8');  
-  }
-
-  const indexAuthor = makeIndex('Люди', authors);
+  const indexAuthor = makeIndex('Люди', getObjects(['author']));
   const indexAuthorFilename = path.join(destPath, INDEX_PEOPLE_FILENAME);
   fs.writeFileSync(indexAuthorFilename, indexAuthor, 'utf8');
 
-  const indexGroup = makeIndex('Группы', groups);
+  const indexGroup = makeIndex('Группы', getObjects(['group']));
   const indexGroupFilename = path.join(destPath, INDEX_GROUP_FILENAME);
   fs.writeFileSync(indexGroupFilename, indexGroup, 'utf8');
 
