@@ -65,3 +65,14 @@ id = "ea0b7872-f130-4959-80e5-07bda2de459c"
 name = "Прорывист"
 description="""
 """
+
+[[group]]
+id = "cef905ef-4169-451e-8a61-6353daeaa750"
+name = "spichka.media"
+description="""
+> Марксистский журнал для умных, молодых и злых.
+"""
+
+[[group.link]]
+name = "spichka.media"
+url = "https://spichka.media"
