@@ -76,3 +76,19 @@ description="""
 [[group.link]]
 name = "spichka.media"
 url = "https://spichka.media"
+
+[[group]]
+id = "9eeaf00b-724e-4fb4-aeed-d31ce7c72378"
+name = "Организация коммунистов-интернационалистов (ОКИ)"
+description="""
+"""
+
+[[group]]
+id = "ef967ec2-92af-4fcc-8e2f-1c185e413f07"
+name = "gorky.media"
+description="""
+"""
+
+[[group.link]]
+name = "gorky.media"
+url = "https://gorky.media"

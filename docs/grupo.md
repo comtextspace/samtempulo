@@ -2,9 +2,11 @@
 
 * [Dharma1937](b041c1ce-29a0-43c4-a65e-1174e0fec0df.md)
 * [LeninCrew](857a3a74-59e1-40a2-ad90-56a21c7edc42.md)
+* [gorky.media](ef967ec2-92af-4fcc-8e2f-1c185e413f07.md)
 * [spichka.media](cef905ef-4169-451e-8a61-6353daeaa750.md)
 * [Вестник Бури](cf48c845-00a2-4ef8-ba7f-73234e8ec1fd.md)
 * [Народная правда (НП)](e038e646-505a-4f83-a8fd-ca96aa0fcd83.md)
+* [Организация коммунистов-интернационалистов (ОКИ)](9eeaf00b-724e-4fb4-aeed-d31ce7c72378.md)
 * [Политштурм](d4e88a55-7eab-4f24-ae49-244e45c05ead.md)
 * [Прорывист](ea0b7872-f130-4959-80e5-07bda2de459c.md)
 * [Простые Числа](f1c87a85-1de8-4c68-b543-8a46dd1ae04a.md)

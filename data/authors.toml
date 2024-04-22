@@ -94,6 +94,28 @@ description="""
 
 [[author]]
 id = "b84d2ca8-38cc-46e5-8076-288a9b73a7c6"
-name = "Иван Каштанов "
+name = "Иван Каштанов"
+description="""
+"""
+
+[[author]]
+id = "159c9653-cf91-46b1-ad75-5c2f2fce677f"
+name = "Зиновий Григорьев"
+description="""
+"""
+
+[[author.connection]]
+to = "9eeaf00b-724e-4fb4-aeed-d31ce7c72378"
+type = "member"
+
+[[author]]
+id = "28f44947-e67c-4538-a6a2-e1dca3d04f76"
+name = "Вероника Райхль"
+description="""
+"""
+
+[[author]]
+id = "1c0759b7-e9f4-4d6f-9476-865b590f8e29"
+name = "А. Костюхина"
 description="""
 """
