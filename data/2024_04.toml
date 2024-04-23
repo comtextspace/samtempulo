@@ -142,3 +142,44 @@ type = "author_group"
 [[article.link]]
 name = "Публикация на сайте gorky.media"
 url = "https://gorky.media/reviews/beskonechno-schastlivoe-polozhenie-raba-knigi-nedeli/"
+
+[[article]]
+id = "43508988-6eaa-4026-8b82-de81c20b1804"
+name="Перевод статей про работы В. Ленина «С чего начать?» и «Что делать?»"
+type="article"
+date = 2024-04-23
+description = """
+Обзор содержания работ В. Ленина «С чего начать?» и «Что делать?» с комментариями.
+"""
+
+[[article.connection]]
+to = "9eeaf00b-724e-4fb4-aeed-d31ce7c72378"
+type = "author_group"
+
+[[article.link]]
+name = "«С чего начать?» Публикация на сайте ОКИ"
+url = "https://teletype.in/@okintern/where-to-begin"
+
+[[article.link]]
+name = "«Что делать?» Публикация на сайте ОКИ"
+url = "https://teletype.in/@okintern/what-is-to-be-done"
+
+[[article.link]]
+name = "Where to Begin? How the foundations of Bolshevism were laid"
+url = "https://www.marxist.com/where-to-begin-how-the-foundations-of-bolshevism-were-laid.htm"
+
+[[article.link]]
+name = "What is to be Done? How Lenin built a battle organisation"
+url = "https://www.marxist.com/what-is-to-be-done-how-lenin-built-a-battle-organisation.htm"
+
+[[article.connection]]
+to = "66f89d56-9bdd-42b5-85ca-c38ed71d0e2b"
+type = "mention"
+
+[[article.connection]]
+to = "fe00be5d-dae1-436d-9a0f-c6ad2db1501c"
+type = "mention"
+
+[[article.connection]]
+to = "d02f782d-dc94-4608-be0d-864baa9e2fe5"
+type = "mention"
