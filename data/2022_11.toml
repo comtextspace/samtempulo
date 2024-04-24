@@ -1,0 +1,33 @@
+
+[[article]]
+id = "3961fb71-7db8-44c8-b98f-30a7a892989b"
+name="Рефлексия раскола"
+type="article"
+date = 2022-11-23
+description = """
+Описание раскола Союза марксистов от одной из образовавшихся в результате раскола групп.
+"""
+
+[[article.connection]]
+to = "9eeaf00b-724e-4fb4-aeed-d31ce7c72378"
+type = "author_group"
+
+[[article.link]]
+name = "Публикация на сайте ОКИ"
+url = "https://vk.com/@new_reds-refleksiya-raskola"
+
+[[article.connection]]
+to = "faa8829a-e709-472f-b70b-abf1564daeec"
+type = "mention"
+
+[[article.connection]]
+to = "6c097a63-4450-4f8f-a419-07373e99281c"
+type = "mention"
+
+[[article.connection]]
+to = "cf48c845-00a2-4ef8-ba7f-73234e8ec1fd"
+type = "mention"
+
+[[article.connection]]
+to = "e9c82744-142a-420b-ad53-fa2afb7ad9e6"
+type = "mention"

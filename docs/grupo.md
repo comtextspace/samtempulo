@@ -2,6 +2,7 @@
 
 * [Dharma1937](b041c1ce-29a0-43c4-a65e-1174e0fec0df.md)
 * [LeninCrew](857a3a74-59e1-40a2-ad90-56a21c7edc42.md)
+* [Station Marx](e9c82744-142a-420b-ad53-fa2afb7ad9e6.md)
 * [gorky.media](ef967ec2-92af-4fcc-8e2f-1c185e413f07.md)
 * [spichka.media](cef905ef-4169-451e-8a61-6353daeaa750.md)
 * [Вестник Бури](cf48c845-00a2-4ef8-ba7f-73234e8ec1fd.md)
