@@ -183,3 +183,29 @@ type = "mention"
 [[article.connection]]
 to = "d02f782d-dc94-4608-be0d-864baa9e2fe5"
 type = "mention"
+
+
+[[article]]
+id = "39aa7d78-f4a1-4e77-9ff8-1bd3fabd18d3"
+name="«Я категорически против скучных леваков»"
+type="article"
+date = 2024-04-22
+description = """
+Обзор биографии Бориса Кагарлицкого.
+"""
+
+[[article.connection]]
+to = "5e2843e6-2562-4063-bf61-1b3a0ef310ca"
+type = "author"
+
+[[article.connection]]
+to = "ef967ec2-92af-4fcc-8e2f-1c185e413f07"
+type = "author_group"
+
+[[article.link]]
+name = "Публикация на сайте gorkiy.media"
+url = "https://gorky.media/context/ya-kategoricheski-protiv-skuchnyh-levakov/"
+
+[[article.connection]]
+to = "21cea120-c102-4621-93dd-946a9f1ed000"
+type = "mention"
