@@ -1,0 +1,20 @@
+[[article]]
+id = "f401f93b-7708-4e4f-ad2e-cc1007dbb1db"
+name="Марксизм как техника (онтологической) безопасности: марксистские практики в постидеологическую эпоху"
+type="article"
+date = 2016-11-01
+description = """
+Чувство тревоги толкает человека на изучение марксизма. Обретение целостного мировоззрения приводит к чувству безопасности. Избавление от тревоги и обретение чувства безопасности становятся целями дальнейшего изучения. 
+"""
+
+[[article.connection]]
+to = "36a6527b-9b4c-468d-825d-f025ee7f3c3a"
+type = "author"
+
+[[article.connection]]
+to = "4f23c542-f328-4e1e-a15d-144f9204864e"
+type = "author_group"
+
+[[article.link]]
+name = "Публикация в журнале «Неприкосновенный запас»"
+url = "https://magazines.gorky.media/nz/2016/5/marksizm-kak-tehnika-ontologicheskoj-bezopasnosti-marksistskie-praktiki-v-postideologicheskuyu-epohu.html"

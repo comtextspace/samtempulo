@@ -98,3 +98,10 @@ id = "e9c82744-142a-420b-ad53-fa2afb7ad9e6"
 name = "Station Marx"
 description="""
 """
+
+[[group]]
+id = "4f23c542-f328-4e1e-a15d-144f9204864e"
+name = "Неприкосновенный запас"
+description="""
+Журнал.
+"""
